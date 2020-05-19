@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <a class="add-btn" href="/add">
+        <button>Adicionar Pokemon</button>
+    </a>
+    {% for nome, url in pokemons %}
+        <a href="/poke/{{loop.index0}}">
+        <div class="pokemon">
+            <img src= {{ url }}>
+            <span>{{ nome }}</span>
+        </div>
+        </a>
+    {%endfor%}
+</body>
+</html>
